@@ -1,0 +1,14 @@
+* {
+  font-family: "Snowburst One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.zaciname {
+  margin-top: 350px;
+  margin-left: 550px;
+  font-size: 48px;
+}
