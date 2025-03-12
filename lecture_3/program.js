@@ -85,3 +85,82 @@ console.log(minimum);
 //  let vysledek = ...
 //     return vysledek
 // }
+
+// FUNKCE, KTERÉ SE DAJÍ POUŽÍT NA POLI
+// funkce push() = přidá na konec pole další prvek
+// funkce pop() = z pole odstraní poslední prvek, který tam byl a nahradí ho novým
+// objeví se v proměnný
+
+// unshift() = nové číslo vloží na začátek
+// shift() = z pole odebírá prvek ze začátku
+
+// Můžeme se dále zeptat, zda pole obsahuje určitý prvek = funkce includes()
+
+// Na jakém indexu je v poli číslo 5 = použijeme funkci indexOf(5)
+
+// pokud tam prvek vůbec není vrací indexOf() = -1
+
+// [12, 5, -7, 0, 5, 33].includes(5);		// => true
+// [12, 5, -7, 0, 5, 33].indexOf(5);		// => 1
+// [12, 5, -7, 0, 5, 33].indexOf(10);	// => -1
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+// Vytvořte funkci pro nalezení nejdelšího řetězce v poli řetězců.
+
+function minimumVPoli(pole) {
+  let minimum = undefined;
+  for (i = 0; i < pole.length; i++) {
+    if (i === 0 || pole[i] < minimum) {
+      minimum = pole[i];
+    }
+  }
+  return minimum;
+}
+// můj pokus:
+// function maximumVPoli(pole) {
+//   let maximum = undefined;
+//   for (i = 0; i < pole.length; i++) {
+//     if (i === 0 || pole[i].length > maximum.length) {
+//       maximum = pole[i];
+//     }
+//   }
+//   return maximum;
+// }
+
+// vysledek:
+function nejdelsiRetezec(pole) {
+  let vysledek = undefined;
+  for (i = 0; i < pole.length; i++) {
+    if (i === 0 || pole[i].length > vysledek.length) {
+      vysledek = pole[i];
+    }
+  }
+  return vysledek;
+}
+// -------------------------------------------------------------
+
+// Vytvořte funkci pro nalezení nejmladšího člověka v poli objektů s klíči jmeno, prijmeni a vek.
+let zamestnanci = [
+  { jmeno: "Barbora", prijmeni: "Smetanová", vek: 45, mzda: 40000 },
+  { jmeno: "Jana", prijmeni: "Černá", vek: 35, mzda: 30000 },
+  { jmeno: "Jan", prijmeni: "Novotný", vek: 33, mzda: 60000 }
+];
+
+for (i = 0; i < zamestnanci.length; i++) {
+  console.log(zamestnanci[i].prijmeni);
+}
+
+// !!! Opravit
+function nejmladsiZamestnanec(pole) {
+  let vysledek = undefined;
+  for (i = 0; i < pole.length; i++) {
+    if (i === 0 || pole[i].vek < vysledek.vek) {
+      vysledek = pole[i];
+    }
+  }
+  return vysledek;
+}
+
+let nejmladsi = nejmladsiZamestnanec(zamestnanci);
+console.log(nejmladsi.prijmeni);
