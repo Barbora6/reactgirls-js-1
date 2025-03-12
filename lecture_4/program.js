@@ -4,12 +4,20 @@ function nahodneCislo(minimum, maximum) {
   return vysledek;
 }
 
+const MAXIMALNI_POCET_POKUSU = 10;
+
 let tajneCislo = nahodneCislo(1, 100);
 console.log("Tajné číslo je:" + tajneCislo);
 
+let pocitadloPokusu = 0;
+
 let odesilaciTlacitko = document.querySelector("#submit-button");
+let restartujiciTlacitko = document.querySelector("#play-again-button");
+
 odesilaciTlacitko.addEventListener("click", function () {
   //   console.log("Uživatel kliknul");
+  pocitadloPokusu = pocitadloPokusu + 1;
+
   let vstupniPolicko = document.querySelector("#number-input");
   let hodnotaPolicka = vstupniPolicko.value;
   let hadaneCislo = Number(hodnotaPolicka);
@@ -19,16 +27,29 @@ odesilaciTlacitko.addEventListener("click", function () {
   let horniHraniceElement = document.querySelector("#right-number");
 
   if (hadaneCislo === tajneCislo) {
-    nadpis.innerHTML = "Congratulations! You won.";
+    nadpis.innerHTML = `Congratulations! You won. And you only needed ${pocitadloPokusu} guesses.`;
     odesilaciTlacitko.style.display = "none";
-
-    let restartujiciTlacitko = document.querySelector("#play-again-button");
     restartujiciTlacitko.style.display = "inline-block";
-  } else if (hadaneCislo < tajneCislo) {
-    nadpis.innerHTML = "Too low!";
-    dolniHraniceElement.innerHTML = hadaneCislo + 1;
   } else {
-    nadpis.innerHTML = "Too hight!";
-    horniHraniceElement.innerHTML = hadaneCislo - 1;
+    if (pocitadloPokusu === MAXIMALNI_POCET_POKUSU) {
+      nadpis.innerHTML = `Sorry, you´ve used all ${pocitadloPokusu} of your guesses.`;
+      odesilaciTlacitko.style.display = "none";
+      restartujiciTlacitko.style.display = "inline-block";
+    } else if (hadaneCislo <= tajneCislo) {
+      nadpis.innerHTML = `Too low! (You´ve already used ${pocitadloPokusu}).`;
+      if (hadaneCislo + 1 > Number(dolniHraniceElement.innerHTML)) {
+        dolniHraniceElement.innerHTML = hadaneCislo + 1;
+      }
+    } else {
+      nadpis.innerHTML = `Too hight! (You´ve already used ${pocitadloPokusu}).`;
+      if (hadaneCislo - 1 < Number(horniHraniceElement.innerHTML)) {
+        horniHraniceElement.innerHTML = hadaneCislo - 1;
+      }
+    }
   }
+});
+
+restartujiciTlacitko.addEventListener("click", function () {
+  //   způsobí znovu načtení stránky
+  window.location.reload();
 });
