@@ -6,10 +6,13 @@ function nahodneCislo(minimum, maximum) {
 
 const MAXIMALNI_POCET_POKUSU = 10;
 
+let viteznyZvuk = new Audio("victory.mp3");
+
 let tajneCislo = nahodneCislo(1, 100);
 console.log("Tajné číslo je:" + tajneCislo);
 
 let pocitadloPokusu = 0;
+let vsechnyPokusy = [];
 
 let odesilaciTlacitko = document.querySelector("#submit-button");
 let restartujiciTlacitko = document.querySelector("#play-again-button");
@@ -22,11 +25,14 @@ odesilaciTlacitko.addEventListener("click", function () {
   let hodnotaPolicka = vstupniPolicko.value;
   let hadaneCislo = Number(hodnotaPolicka);
 
+  vsechnyPokusy.push(hadaneCislo);
+
   let nadpis = document.querySelector("#message");
   let dolniHraniceElement = document.querySelector("#left-number");
   let horniHraniceElement = document.querySelector("#right-number");
 
   if (hadaneCislo === tajneCislo) {
+    viteznyZvuk.play();
     nadpis.innerHTML = `Congratulations! You won. And you only needed ${pocitadloPokusu} guesses.`;
     odesilaciTlacitko.style.display = "none";
     restartujiciTlacitko.style.display = "inline-block";
