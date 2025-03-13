@@ -33,6 +33,8 @@
 // let name1 = prompt("Zadej svoje jméno:");
 // console.log("Tvoje jméno je " + name1 + ".");
 
+// Úkol: KOLIK TI BUDE ZA ROK?
+
 let age = prompt("Zadej svůj věk:");
 let ageForYear = Number(age) + 1;
 // console.log("Za rok ti bude" + ageForYear + "let.");
@@ -45,6 +47,7 @@ console.log("Za rok ti bude " + ageForYear + "let.");
 
 console.log(`Za rok ti bude ${ageForYear} let.`);
 
+//  Úkol: urči za je číslo kladné nebo záportné
 let number = 23;
 
 if (number > 0) {
@@ -63,12 +66,14 @@ let hour = Number(prompt("Zadej hodinu:"));
 
 let hodina = prompt("zadej hodinu");
 
-if (hour < 10) {
+if (hour <= 10) {
   console.log("Je ráno");
 } else if (hour <= 12) {
   console.log("Je dopoledne.");
 } else if (hour >= 12) {
   console.log("Je odpoledne.");
+} else {
+  console.log("Je večer.");
 }
 
 // && = 2 ampersanty, znamená a zároveň

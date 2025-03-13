@@ -1,4 +1,4 @@
-// Funkce = je kus kodu, který si pojmenujeme a dám za to kulaté závorky
+// Funkce = je kus kodu, který si pojmenujeme a dáme za ni kulaté závorky
 // mezi složené závorky můžeme napsat kód, který se vykoná
 // někde v kódu, můžeme tuto funkci zavolat a tam se vykoná
 
