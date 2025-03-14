@@ -14,3 +14,18 @@ uvod.style.textAlign = "right";
 // Přidání třídy elementu
 let ctverecek = document.querySelector(".ctverecek");
 ctverecek.classList.add("aktivni");
+
+// Vytvoření funkce na změnu aktivnosti
+
+const changeActive = (event) => {
+  const eventElement = event.target;
+  eventElement.classList.toggle("aktivni");
+};
+
+ctverecek.addEventListener("click", changeActive);
+
+// Vygenerování náhodného čísla
+const randomNumber = (minimum, maximum) => {
+  const result = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+  return result;
+};
