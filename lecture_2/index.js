@@ -15,7 +15,7 @@ uvod.style.textAlign = "right";
 let ctverecek = document.querySelector(".ctverecek");
 ctverecek.classList.add("aktivni");
 
-// Vytvoření funkce na změnu aktivnosti
+// Vytvoření funkce na změnu aktivnosti = PŘIDÁVÁ A ODEBÍRÁ CLASS (např. na změnu barvy)
 
 const changeActive = (event) => {
   const eventElement = event.target;

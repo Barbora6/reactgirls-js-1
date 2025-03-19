@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <title>
       ReactGirls, JavaScript 1 akademie, Document Object Model, události, domácí
       úkol
@@ -43,25 +43,37 @@
 
         <h2>Výběr obrázku zvířete</h2>
         <p>
-          <button type="button">Osel</button>
-          <button type="button">Lenochod</button>
-          <button type="button">Tučňák</button>
-          <button type="button">Aligátor</button>
+          <button type="button" id="btn-osel">Osel</button>
+          <button type="button" id="btn-lenochod">Lenochod</button>
+          <button type="button" id="btn-tucnak">Tučňák</button>
+          <button type="button" id="btn-aligator">Aligátor</button>
         </p>
 
         <h2>Text odstavce</h2>
         <p>Vyplň text odstavce.</p>
         <p>
-          <textarea></textarea>
-          <button type="button">Použij text odstavce</button>
+          <textarea id="text-odstavce"></textarea>
+          <button type="button" id="btn-odstavec">Použij text odstavce</button>
         </p>
       </section>
-
       <section id="vysledek" class="theme-blue">
         <h1 id="new-title">Výchozí text nadpisu</h1>
-        <img src="donkey.webp" />
-        <p>Výchozí text odstavce.</p>
+        <img src="donkey.webp" id="main-picture" />
+        <p class="vychozi-text">Výchozí text odstavce.</p>
+        <p class="output" id="output1"></p>
       </section>
     </main>
+    <!-- zkouška inputu, vypsani do stránky -->
+    <section id="vstupy">
+      <h2>Textbox</h2>
+      <label for="tbuser">Username:</label>
+      <input
+        type="text"
+        id="tbuser"
+        placeholder="Enter Usename"
+        maxlength="20"
+      />
+      <input type="button" id="btn1" value="Click Me" />
+    </section>
   </body>
 </html>

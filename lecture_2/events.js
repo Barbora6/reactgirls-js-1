@@ -67,13 +67,13 @@ function zmenAktivnost(event) {
   elementUdalosti.classList.toggle("aktivni");
 }
 
-// Navěšení funkce pro přepínání třídy "aktivni" na kliknutí na druhý, třetí a čtvrtý čtvereček
-let druhyCtverecek = document.querySelector("#druhy-ctverecek");
-let tretiCtverecek = document.querySelector("#treti-ctverecek");
-let ctvrtyCtverecek = document.querySelector("#ctvrty-ctverecek");
-druhyCtverecek.addEventListener("click", zmenAktivnost);
-tretiCtverecek.addEventListener("click", zmenAktivnost);
-ctvrtyCtverecek.addEventListener("click", zmenAktivnost);
+// Navěšení funkce pro přepínání třídy "aktivni" na kliknutí na druhý, třetí a čtvrtý čtvereček DOKONČIT!
+// let druhyCtverecek = document.querySelector("#druhy-ctverecek");
+// let tretiCtverecek = document.querySelector("#treti-ctverecek");
+// let ctvrtyCtverecek = document.querySelector("#ctvrty-ctverecek");
+// druhyCtverecek.addEventListener("click", zmenAktivnost);
+// tretiCtverecek.addEventListener("click", zmenAktivnost);
+// ctvrtyCtverecek.addEventListener("click", zmenAktivnost);
 
 // --------------------------------------------------
 
