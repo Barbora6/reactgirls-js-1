@@ -1,5 +1,3 @@
-// let vstupy = document.querySelector("#vstupy");
-let zakladniClass = document.querySelector(".theme-item");
 let themeBlue = document.querySelector(".theme-blue");
 let themeBeige = document.querySelector(".theme-beige");
 let themeGreen = document.querySelector(".theme-green");

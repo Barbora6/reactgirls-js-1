@@ -1,29 +1,70 @@
 /* --- Nastavení box-sizing bez bližšího komentáře --- */
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  padding: 80px 102px;
 }
 /* --------------------------------------------------- */
 
 .ctverecek {
-	color: lightgray;
-	background-color: dimgray;
-	width: 12rem;
-	height: 12rem;
-	border: 2px black solid;
-	border-radius: 10px;
-	margin: 1rem 0;
-	padding: 2rem;
-	display: flex;
-	align-items: center;
+  color: lightgray;
+  background-color: dimgray;
+  width: 12rem;
+  height: 12rem;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 1rem 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .aktivni {
-	background-color: green;
-	color: yellow;
-	border: 2px gray solid;
+  background-color: green;
+  color: yellow;
+  border: 2px gray solid;
+}
+
+/* -------------------------------------------------- */
+
+.container {
+  border: 2px solid #333;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  margin-top: 35px;
+  width: 350px;
+}
+
+.color {
+  display: inline-flex;
+  width: 80px;
+  height: 80px;
+  margin: 0 1px;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.clr1 {
+  background-color: #9b0fdb;
+}
+.clr2 {
+  background-color: #ffea00;
+}
+.clr3 {
+  background-color: #04db53;
+}
+.clr4 {
+  background-color: #0f68db;
 }
